@@ -2,7 +2,7 @@
  * @Description:  
  * @Author: owen
  * @Date: 2021-08-27 10:32:33
- * @LastEditTime: 2021-08-28 16:58:21
+ * @LastEditTime: 2021-08-28 16:58:01
 -->
 <template>
   <canvas ref="webgl" class="webgl"></canvas>
@@ -15,7 +15,7 @@ import { MMDAnimationHelper } from "three/examples/jsm/animation/MMDAnimationHel
 import { MMDLoader } from "three/examples/jsm/loaders/MMDLoader.js";
 import Stats from "three/examples/jsm/libs/stats.module";
 export default {
-  name: "Dance",
+  name: "Dance2",
   mounted() {
     const sizes = {
       width: window.innerWidth,
@@ -150,6 +150,11 @@ export default {
       light.position.x = Math.cos((clock.getElapsedTime() + 2) * 2) * 10;
       light.position.z = Math.sin((clock.getElapsedTime() + 2) * 2) * 10;
       planCube.position.z -= 0.1;
+
+      camera.position.x = Math.cos(clock.getElapsedTime() * 0.2) * 50;
+      camera.position.z = Math.sin(clock.getElapsedTime() * 0.2) * 100;
+      camera.position.y = Math.sin(clock.getElapsedTime()) * 5 + 10;
+
       requestAnimationFrame(animate);
       controls.update();
       helper.update(0.02);

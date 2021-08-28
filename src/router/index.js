@@ -2,7 +2,7 @@
  * @Description:
  * @Author: owen
  * @Date: 2021-08-27 10:06:17
- * @LastEditTime: 2021-08-28 14:55:26
+ * @LastEditTime: 2021-08-28 16:59:03
  */
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -15,7 +15,7 @@ const routes = [
   {
     path: "/navi",
     name: "index",
-    redirect: "/navi/bolls",
+    redirect: "/navi/dance",
     component: () => import("../layout/index.vue"),
     children: [
       {
@@ -53,6 +53,12 @@ const routes = [
         name: "Dance",
         component: () => import("../views/components/dance.vue"),
         meta: { title: "dance" },
+      },
+      {
+        path: "/navi/dance2",
+        name: "Dance2",
+        component: () => import("../views/components/dance2.vue"),
+        meta: { title: "dance2" },
       },
     ],
   },
