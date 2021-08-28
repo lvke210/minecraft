@@ -2,7 +2,7 @@
  * @Description:  
  * @Author: owen
  * @Date: 2021-08-27 10:13:52
- * @LastEditTime: 2021-08-27 11:25:15
+ * @LastEditTime: 2021-08-27 12:14:56
 -->
 <template>
   <div class="wrap">
@@ -24,12 +24,10 @@ export default {
     };
   },
   mounted() {
-    console.log(this.$router);
     this.list = this.$router.options.routes[1].children;
   },
   methods: {
     hdclick(e) {
-      console.log(e);
       this.$router.push({ path: e.path });
     },
   },
